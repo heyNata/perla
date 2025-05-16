@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Banner Tres Columnas con Picture</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <style>
+    body {
+      background-color: #E3E3E3;
+      margin: 0;
+    }
+
+    .banner-section {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: #fff;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .banner-image {
+      flex: 1 1 100%;
+      display: flex;
+    }
+
+    .banner-image picture,
+    .banner-image img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+    }
+
+    .banner-text {
+      flex: 1 1 100%;
+      padding: 16px;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .banner-text h2 {
+      font-size: 24px;
+      margin-bottom: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .banner-image,
+      .banner-text {
+        flex: 0 0 auto;
+      }
+
+      .banner-image {
+        width: 33.33%;
+      }
+
+      .banner-text {
+        width: 33.33%;
+      }
+    }
+
+    @media (min-width: 1400px) {
+      .container {
+        max-width: 1380px;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .banner-image.img-right {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container my-5 p-0">
+    <div class="banner-section">
+
+      <!-- Imagen A -->
+      <div class="banner-image">
+        <picture>
+          <source media="(min-width: 1400px)" srcset="IMG-A-xl.png">
+          <source media="(min-width: 1200px)" srcset="IMG-A-lg.png">
+          <source media="(min-width: 768px)" srcset="IMG-A-md.png">
+          <img src="IMG-A-sm.png" alt="Imagen A">
+        </picture>
+      </div>
+
+      <!-- Texto -->
+      <div class="banner-text">
+        <p class="text-primary font-weight-bold mb-1">Título del Banner</p>
+        <h2>Texto destacado centrado entre las dos imágenes</h2>
+        <p class="text-muted small mb-0">Condiciones válidas hasta el 30/09/2025</p>
+      </div>
+
+      <!-- Imagen B (oculta en <768px) -->
+      <div class="banner-image img-right">
+        <picture>
+          <source media="(min-width: 1400px)" srcset="IMG-B-xl.png">
+          <source media="(min-width: 1200px)" srcset="IMG-B-lg.png">
+          <source media="(min-width: 768px)" srcset="IMG-B-md.png">
+          <img src="IMG-B-sm.png" alt="Imagen B">
+        </picture>
+      </div>
+
+    </div>
+
+    <!-- Bloque de explicación sobre el comportamiento de las imágenes -->
+<div class="info-block mt-4 p-4 bg-white rounded">
+  <h5 class="mb-3 font-weight-bold">¿Cómo se comportan las imágenes en este diseño?</h5>
+  <ul class="mb-2">
+    <li><strong>Se utiliza el elemento &lt;picture&gt;</strong> para mostrar versiones distintas de la imagen según el ancho de la pantalla.</li>
+    <li><strong>Gracias al atributo <code>media</code> en &lt;source&gt;</strong>, el navegador selecciona y descarga únicamente la imagen más adecuada para el dispositivo (por ejemplo, una versión más ligera para móviles).</li>
+    <li><strong>Las imágenes usan <code>width: 100%</code></strong> para ocupar todo el ancho disponible en su columna.</li>
+    <li><strong>El alto es automático (<code>height: auto</code>)</strong>, por lo que se adaptan proporcionalmente al ancho sin distorsión.</li>
+    <li><strong>El uso de <code>object-fit: cover</code></strong> asegura que, si hay un ajuste forzado de dimensiones, la imagen se recorte manteniendo su proporción.</li>
+    <li><strong>La columna de texto central</strong> ajusta la altura total del banner gracias a Flexbox.</li>
+  </ul>
+  <p class="mb-0"><strong>✅ Resultado:</strong> las imágenes se ven correctamente en cada dispositivo, se optimiza el rendimiento y se reduce el consumo de datos en móviles.</p>
+</div>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

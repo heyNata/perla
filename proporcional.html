@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Banner Promo</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #E3E3E3;
+      margin: 0;
+    }
+
+    .promo-section {
+      background-color: #fff;
+      border-radius: 8px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      overflow: hidden;
+      margin: 0;
+    }
+
+    .promo-image {
+      flex: 1 1 100%;
+    }
+
+    .promo-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0;
+    }
+
+    .promo-text {
+      flex: 1 1 100%;
+      padding: 24px;
+    }
+
+    /* ≥768px: imagen y texto 6 columnas */
+    @media (min-width: 768px) {
+      .promo-image,
+      .promo-text {
+        flex: 0 0 auto;
+      }
+
+      .promo-image {
+        width: 50%;
+      }
+
+      .promo-text {
+        width: 50%;
+      }
+    }
+
+    /* ≥1024px: imagen 5 columnas, texto 7 */
+    @media (min-width: 1024px) {
+      .promo-image {
+        width: 41.6667%; /* 5/12 */
+      }
+
+      .promo-text {
+        width: 58.3333%; /* 7/12 */
+      }
+    }
+
+    /* ≥1200px: imagen y texto 6 columnas */
+    @media (min-width: 1200px) {
+      .promo-image {
+        width: 50%;
+      }
+
+      .promo-text {
+        width: 50%;
+      }
+    }
+
+    /* ≥1400px: imagen y texto 6 columnas + max-width container */
+    @media (min-width: 1400px) {
+      .container {
+        max-width: 1380px;
+      }
+
+      .promo-image {
+        width: 50%;
+      }
+
+      .promo-text {
+        width: 50%;
+      }
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      font-weight: bold;
+    }
+
+    p.lead {
+      font-size: 1.25rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container my-5 p-0">
+    <div class="promo-section">
+      <!-- Imagen sin padding -->
+      <div class="promo-image">
+        <img src="Img-banner.png" alt="Promoción">
+      </div>
+
+      <!-- Texto con padding -->
+      <div class="promo-text">
+        <p class="text-primary font-weight-bold mb-1">Título Promo</p>
+        <h1 class="mb-3">Las mejores condiciones de financiación para tus clientes con equipos “Marca”</h1>
+        <a href="#" class="btn btn-primary mb-3">Más información</a>
+        <p class="text-muted small mb-0">Condiciones válidas hasta el 30/09/2025</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
